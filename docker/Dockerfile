@@ -8,13 +8,13 @@ ENV TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0+PTX"
 ENV TORCH_NVCC_FLAGS="-Xfatbin -compress-all"
 ENV CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
 
-RUN apt-get update && apt-get install -y git libglib2.0-0 libsm6 libxrender-dev \
+RUN apt-get update && apt-get install -y git libglib2.0-0 ffmpeg libsm6 libxext6 libxrender-dev  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Install mmfashion
 RUN conda clean --all
-RUN git clone --recursive https://github.com/open-mmlab/mmfashion.git /mmfashion
+RUN git clone --recursive https://github.com/shadowlord276/mmfashion.git /mmfashion
 WORKDIR /mmfashion
 ENV FORCE_CUDA="1"
 RUN pip install -r requirements.txt

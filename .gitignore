@@ -17,7 +17,6 @@ data/DeepFashion
 data/Attr_Predict
 data/Consumer-to-shop\ Clothes\ Retrieval\ Benchmark/
 data/*.png
-data/VTON
 data/gdrive-linux-64
 checkpoint/
 extracted_features/
